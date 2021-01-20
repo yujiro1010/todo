@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.todo.bean.LoginBean;
+import com.todo.beans.LoginBean;
 
 /**
  * ・社員情報検索サービス

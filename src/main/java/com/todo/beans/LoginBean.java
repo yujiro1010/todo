@@ -1,4 +1,4 @@
-package com.todo.bean;
+package com.todo.beans;
 
 public class LoginBean {
     private String id;

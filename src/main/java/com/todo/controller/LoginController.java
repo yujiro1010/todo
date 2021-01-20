@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.todo.bean.LoginBean;
+import com.todo.beans.LoginBean;
 import com.todo.service.LoginService;
 
 public class LoginController extends HttpServlet {
