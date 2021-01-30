@@ -1,0 +1,44 @@
+.wrapper{
+ margin: 0 auto;
+ width: 700px;
+}
+
+
+ul li {
+ margin-top: 20px;
+ list-style: none;
+ font-size:25px;
+}
+
+label {
+ width: 150px;
+ float: left;
+}
+
+ul {
+ width: 400px;
+ margin: 0 auto;
+}
+
+input#button {
+ display: block;
+ margin: 40px auto;
+ background-color:#008000;
+ padding: 5px 70px;
+ color:#FFFFFF;
+ font-size: 20px;
+}
+ul li.pass {
+ margin-bottom: 15px;
+}
+
+.footer{
+ float: auto;
+ margin-top:50px;
+ margin-left:150px;
+ width: 400pX;
+ text-align: center;
+ font-weight: 700;
+ font-size:25px;
+
+}

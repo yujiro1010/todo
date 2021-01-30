@@ -27,9 +27,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // TODO 自動生成されたメソッド・スタブ
-        http.authorizeRequests().antMatchers("/todo/src/main/resources/css/project_detail.css").permitAll()
+        http.authorizeRequests().antMatchers("/css/**").permitAll()
         .anyRequest().authenticated()
-        .and().formLogin();
+        .and().formLogin().loginPage("/login").permitAll();
     }
 
     @Bean
