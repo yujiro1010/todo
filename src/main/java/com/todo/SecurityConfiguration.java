@@ -8,15 +8,20 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.todo.service.DatabaseUserDetailsService;
+
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private DatabaseUserDetailsService userDetailsService;
 
     @Autowired
     PasswordEncoder PasswordEncoder;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // TODO 自動生成されたメソッド・スタブ
-        auth.inMemoryAuthentication().withUser("user").password(passwordEncoder().encode("password")).roles("USER");
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override

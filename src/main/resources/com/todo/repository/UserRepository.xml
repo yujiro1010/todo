@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.todo.repository.UserRepository">
+	<select id="identifyUser" parameterType="java,lang.String" resultMap="userDetails">
+	<![CDATA[
+		SECECT users.id,
+		       users.user_name,
+		       users.password,
+		       users.delete_flg,
+		       users.created_at,
+		       users.updated_at,
+		       users.company_id,
+		FROM users,
+	]]>
+	</select>
+
+	<resultMap type="com.todo.beans.UserBean" id="userDetails">
+		<result property="id" column="id" />
+		<result property="password" column="password"/>
+		<result property="delete_flg" column="delete_flg"/>
+		<result property="created_at" column="created_at"/>
+		<result property="updated_at" column="updated_at"/>
+		<result property="company_id" column="company_id"/>
+
+
+
+	</resultMap>
+</mapper>

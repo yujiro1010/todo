@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.todo.beans.LoginBean;
+import com.todo.beans.UserBean;
 import com.todo.service.LoginService;
 
 public class LoginController extends HttpServlet {
@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
              // 問② EmployeeServiceクラスをインスタンス化する。
             LoginService service = new LoginService();
              // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
-            LoginBean bean = service.search(id, password);
+            UserBean bean = service.search(id, password);
              // 問④ nullの部分に適切な引数をセットする。
             request.setAttribute("LoginBean", bean);
 
