@@ -5,11 +5,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.todo.service.DatabaseUserDetailsService;
 
 @EnableWebSecurity
@@ -31,7 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // TODO 自動生成されたメソッド・スタブ
         http.authorizeRequests().antMatchers("/css/**").permitAll()
         .anyRequest().authenticated()
-        .and().formLogin().loginPage("/login").usernameParameter("id").permitAll();
+        .and().formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
+        .and()
         .logout().logoutUrl("/logout")
         .invalidateHttpSession(true)
         .deleteCookies("JSESSIONID");

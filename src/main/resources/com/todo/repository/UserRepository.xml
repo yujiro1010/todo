@@ -4,25 +4,25 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.todo.repository.UserRepository">
-	<select id="identifyUser" parameterType="java,lang.String" resultMap="userDetails">
+	<select id="identifyUser" parameterType="java.lang.String" resultMap="userDetails">
 	<![CDATA[
-		SECECT users.id,
+		SELECT users.id,
 		       users.user_name,
 		       users.password,
 		       users.delete_flg,
 		       users.created_at,
-		       users.updated_at,
-		       users.company_id,
-		FROM users,
+		       users.company_id
+		FROM users
+		WHERE users.user_name = #{user_name}
 	]]>
 	</select>
 
 	<resultMap type="com.todo.beans.UserBean" id="userDetails">
 		<result property="id" column="id" />
+		<result property="user_name" column="user_name"/>
 		<result property="password" column="password"/>
 		<result property="delete_flg" column="delete_flg"/>
 		<result property="created_at" column="created_at"/>
-		<result property="updated_at" column="updated_at"/>
 		<result property="company_id" column="company_id"/>
 
 

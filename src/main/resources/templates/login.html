@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,26 @@
     <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
 <body>
+
     <div class="wrapper">
-        <ul>
+    <form method="post" th:action="@{/login}">
+		<ul>
+        	<li class="id">
+        		<label for="id">ユーザー名</label>
+        		<input type="text" id="username" name="username" value="" size="30">
+        	</li>
 
-        <li class="id">
-        <label for="id">ユーザー名</label>
-        <input type="text" name="id" value="" size="30">
-        </li>
+        	<li class="pass">
+        		<label for="pass">パスワード</label>
+        		<input type="password" id="password" name="password" value="" size="30">
 
-        <li class="pass">
-        <label for="pass">パスワード</label>
-        <input type="text" name="pass" value="" size="30">
-
-        <li class="button">
-        <input id="button" type="submit" name="button" value="ログイン">
-        </li>
+        	<li class="button">
+        		<input id="button" type="submit" name="button" value="ログイン">
+        	</li>
         </ul>
-        <div class="footer">
-        <a href="http://">新規登録はこちら</a></div>
-        </div>
+    <div class="footer">
+    	<a href="http://">新規登録はこちら</a></div>
+    </form>
+    </div>
 </body>
 </html>
