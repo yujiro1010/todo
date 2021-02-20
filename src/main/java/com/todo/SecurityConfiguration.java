@@ -14,7 +14,7 @@ import com.todo.service.DatabaseUserDetailsService;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private DatabaseUserDetailsService userDetailsService;
+    DatabaseUserDetailsService userDetailsService;
 
     @Autowired
     PasswordEncoder PasswordEncoder;
@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // TODO 自動生成されたメソッド・スタブ
         http.authorizeRequests().antMatchers("/css/**").permitAll()
         .anyRequest().authenticated()
-        .and().formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
+        .and().formLogin().loginPage("/login").usernameParameter("user_name").passwordParameter("password").permitAll()
         .and()
         .logout().logoutUrl("/logout")
         .invalidateHttpSession(true)

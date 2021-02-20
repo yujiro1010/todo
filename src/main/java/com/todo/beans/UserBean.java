@@ -1,11 +1,7 @@
 package com.todo.beans;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.sql.Date;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
@@ -13,25 +9,25 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 public class UserBean implements UserDetails {
-    private String id;
+    private int id;
     private String user_name;
     private String password;
-    private String delete_flg;
-    private String created_at;
-    private String updated_at;
-    private String company_id;
-    private List<String> roles;
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream()
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
-    }
+    private int delete_flg;
+    private Date created_at;
+    private Date updated_at;
+    private int company_id;
+//    private List<String> roles;
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        return roles.stream()
+//                .map(SimpleGrantedAuthority::new)
+//                .collect(Collectors.toList());
+//    }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
     public void setUser_Name(String user_name) {
@@ -46,28 +42,28 @@ public class UserBean implements UserDetails {
     public String getPassWord() {
         return password;
     }
-    public void setDelete_Flg(String delete_flg) {
+    public void setDelete_Flg(int delete_flg) {
         this.delete_flg = delete_flg;
     }
-    public String getDelete_Flg() {
+    public int getDelete_Flg() {
         return delete_flg;
     }
-    public void setCreated_At(String created_at) {
+    public void setCreated_At(Date created_at) {
         this.created_at = created_at;
     }
-    public String getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
-    public void setUpdated_At(String updated_at) {
+    public void setUpdated_At(Date updated_at) {
         this.updated_at = updated_at;
     }
-    public String getUpdated_At() {
+    public Date getUpdated_At() {
         return updated_at;
     }
-    public void setCompany_Id(String company_id) {
+    public void setCompany_Id(int company_id) {
         this.company_id = company_id;
     }
-    public String getCompany_Id() {
+    public int getCompany_Id() {
         return company_id;
     }
 

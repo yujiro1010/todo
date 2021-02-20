@@ -12,7 +12,7 @@ import com.todo.repository.UserRepository;
 public class DatabaseUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String user_name) throws UsernameNotFoundException {
         // TODO 自動生成されたメソッド・スタブ
