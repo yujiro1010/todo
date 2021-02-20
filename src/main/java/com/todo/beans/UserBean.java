@@ -1,7 +1,12 @@
 package com.todo.beans;
 
 import java.sql.Date;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
@@ -16,13 +21,13 @@ public class UserBean implements UserDetails {
     private Date created_at;
     private Date updated_at;
     private int company_id;
-//    private List<String> roles;
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return roles.stream()
-//                .map(SimpleGrantedAuthority::new)
-//                .collect(Collectors.toList());
-//    }
+    private List<String> roles;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+    }
 
     public void setId(int id) {
         this.id = id;

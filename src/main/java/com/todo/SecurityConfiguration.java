@@ -14,14 +14,14 @@ import com.todo.service.DatabaseUserDetailsService;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    DatabaseUserDetailsService userDetailsService;
+    DatabaseUserDetailsService databaseUserDetailsService;
 
     @Autowired
     PasswordEncoder PasswordEncoder;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // TODO 自動生成されたメソッド・スタブ
-        auth.userDetailsService(userDetailsService);
+        auth.userDetailsService(databaseUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Override
